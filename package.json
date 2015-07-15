@@ -1,0 +1,41 @@
+{
+  "name": "Elephorm-TPs",
+  "version": "1.0.0",
+  "description": "Répertoire git pour le tp du cours git de la plateforme Elephorm",
+  "main": "server.js",
+  "scripts": {
+    "watchify": "./node_modules/watchify/bin/cmd.js -r ./converter/markdown.js:markdown -o public/bundle.js",
+    "browserify": "./node_modules/browserify/bin/cmd.js -r ./converter/markdown.js:markdown > public/bundle.js",
+    "nodemon": "./node_modules/nodemon/bin/nodemon.js",
+    "dev": "npm run watchify & npm run nodemon",
+    "test": "./node_modules/mocha/bin/mocha converter/tests/markdown-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sabativi/Elephorm-TPs.git"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "Elephorm"
+  ],
+  "author": "Victor Sabatier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sabativi/Elephorm-TPs/issues"
+  },
+  "homepage": "https://github.com/sabativi/Elephorm-TPs",
+  "dependencies": {
+    "browserify": "^10.2.6",
+    "express": "^4.13.1",
+    "jade": "^1.11.0"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "js-beautify": "^1.5.10",
+    "mocha": "^2.2.5",
+    "nodemon": "^1.3.7",
+    "source-map-support": "^0.3.2",
+    "watchify": "^3.2.3"
+  }
+}

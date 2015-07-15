@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Realtime Markdown Viewer
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', rel='stylesheet')
+    link(href='style.css', rel='stylesheet')
+  body.container-fluid
+    section.row
+      textarea#pad.col-md-6.full-height Write your text here..
+      #markdown.col-md-6.full-height
+    script(src='https://cdn.rawgit.com/showdownjs/showdown/1.0.2/dist/showdown.min.js')
+    script(src='bundle.js')
+    script(src='script.js')
