@@ -8,10 +8,20 @@
    return str;
  }
 
+ var parseHorizontaleLine = function(str) {
+  var horizontalRegExp = /^(?:([\*\-_] ?)+)\1\1$/gm;
+  var stra = [];
+  while ((stra = horizontalRegExp.exec(str)) !== null) {
+    str = str.replace(stra[0], '\n<hr/>\n');
+  }
+  return str;
+ }
+
 var markdown = {
   parse: function (str, strict) {
     'use strict';
     str = parseHeadline(str);
+    str = parseHorizontaleLine(str);
     return str;
   }
 };
