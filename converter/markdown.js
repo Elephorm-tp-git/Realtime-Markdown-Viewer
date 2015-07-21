@@ -54,10 +54,20 @@ var parseStrong = function(str) {
   return str;
  }
 
+ var parseNewLine = function(str) {
+  var newLineRegExp = /(\n)/;
+  var stra = [];
+  while ((stra = newLineRegExp.exec(str)) !== null) {
+    str = str.replace(stra[0], '<br/>');
+  }
+  return str;
+ }
+
 
 var markdown = {
   parse: function (str, strict) {
     'use strict';
+    str = parseNewLine(str);
     str = parseHeadline(str);
     str = parseBold(str);
     str = parseItalic(str);
