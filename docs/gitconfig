@@ -1,0 +1,20 @@
+[color]
+        ui = true
+[core]
+        editor = vim
+        autocrlf = true
+[alias]
+        ci = commit
+        co = checkout
+        st = status
+        df = diff
+        mg = merge
+        bl = blame
+        fast-forward = merge --ff-only
+        ff = merge --ff-only
+        l=log --pretty=oneline --abbrev-commit --graph --decorate
+        br = branch
+        sh = show --pretty=raw
+[help]
+        autocorrect = 1
+
