@@ -25,6 +25,15 @@ var parseBold = function(str) {
   }
   return str;
  }
+ 
+ var parseCodeBlock = function(str) {
+  var codeRegExp = /```(.*?)```/;
+  var stra = [];
+  while ((stra = codeRegExp.exec(str)) !== null) {
+    str = str.replace(stra[0], '<code>' + stra[1] + '</code>');
+  }
+  return str;
+ }
 
 var parseStrong = function(str) {
   var strongRegExp = /(~~)(.*?)\1/;
@@ -104,6 +113,7 @@ var markdown = {
     str = parseCode(str);
     str = parseBlockQuote(str);
     str = parseDel(str);
+    str = parseCodeBlock(str);
     return str;
   }
 };
