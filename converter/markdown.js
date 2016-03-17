@@ -32,15 +32,25 @@ var parseLink = function(str) {
   var boldRegExp = /(\*\*)(.*?)\1/;
   var stra = [];
   while ((stra = boldRegExp.exec(str)) !== null) {
-    str = str.replace(stra[0], '<strong>' + stra[2] + '</strong>')
+    str = str.replace(stra[0], '<b>' + stra[2] + '</b>')
   }
   return str;
  }
+ 
+var parseStrong = function(str) {
+  var strongRegExp = /(~~)(.*?)\1/;
+  var stra = [];
+  while ((stra = strongRegExp.exec(str)) !== null) {
+     str = str.replace(stra[0], '<strong>' + stra[2] + '</strong>')
+   }
+   return str;
+}
 var markdown = {
   parse: function (str, strict) {
     'use strict';
     str = parseHeadline(str);
     str = parseBold(str);
+    str = parseStrong(str);
     str = parseHorizontaleLine(str);
     str = parseLink(str);
     return str;
