@@ -27,6 +27,16 @@ var parseLink = function(str) {
  }
 
 
+ var parseItalic = function(str) {
+  var italicRegExp = /(\*|_)(.*?)\1/;
+  var stra = [];
+  while ((stra = italicRegExp.exec(str)) !== null) {
+    str = str.replace(stra[0], '<i>' + stra[2] + '</i>')
+  }
+  return str;
+}
+
+
 
  var parseBold = function(str) {
   var boldRegExp = /(\*\*)(.*?)\1/;
@@ -43,6 +53,7 @@ var markdown = {
     str = parseBold(str);
     str = parseHorizontaleLine(str);
     str = parseLink(str);
+    str = parseItalic(str);
     return str;
   }
 };
