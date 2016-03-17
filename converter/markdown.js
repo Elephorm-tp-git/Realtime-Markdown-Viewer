@@ -1,5 +1,5 @@
  var parseHeadline = function(str) {
-   var headlineRegExp =  /^(\#{1,6})([^\#\n]+)$/m;
+   var headlineRegExp =  /(\#{1,6})([^\#\n]+)/m;
    var stra = [];
    while ((stra = headlineRegExp.exec(str)) !== null) {
      count = stra[1].length;
