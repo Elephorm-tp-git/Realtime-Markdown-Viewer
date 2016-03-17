@@ -17,10 +17,19 @@
   return str;
  }
 
+ var parseBold = function(str) {
+  var boldRegExp = /(\*\*)(.*?)\1/;
+  var stra = [];
+  while ((stra = boldRegExp.exec(str)) !== null) {
+    str = str.replace(stra[0], '<strong>' + stra[2] + '</strong>')
+  }
+  return str;
+ }
 var markdown = {
   parse: function (str, strict) {
     'use strict';
     str = parseHeadline(str);
+    str = parseBold(str);
     str = parseHorizontaleLine(str);
     return str;
   }
