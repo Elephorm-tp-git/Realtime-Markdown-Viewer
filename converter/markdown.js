@@ -63,7 +63,6 @@ var markdown = {
     str = parseStrong(str);
     str = parseHorizontaleLine(str);
     str = parseLink(str);
-    str = parseTiti(str);
     str = parseItalic(str);
     return str;
   }
