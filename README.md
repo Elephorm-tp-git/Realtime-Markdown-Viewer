@@ -146,3 +146,4 @@ L'objectif du TP n'est pas de faire le parser, nous l'utilisons comme pretexte p
 
 
 
+Voici un test ajouté par ma pomme juste pour générer un conflit à résoudre
